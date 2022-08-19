@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <header>
+            <!--Journal title-->
+                <img src="../Finals/title.png">
+            <div class="header-list" >
+                <ul>
+                  <li><a href="../Finals/main.html">Home</a></li>
+                  <li><a href="../Finals/entries.html">Entries</a></li>
+                  <li><a href="../Finals/stats.html">About Me</a></li>
+                </ul>
+        </header>
+        <div class="date" id="current_date">
+            <script>
+            date = new Date();
+            year = date.getFullYear();
+            month = date.getMonth() + 1;
+            day = date.getDate();
+            document.getElementById("current_date").innerHTML ="Today is " + month + "/" + day + "/" + year;
+            </script>
+        </div>
+        <div class="entry">
+            <h1>Write about your day!</h1>
+            <textarea id="word" oninput="countWord()" rows="10" cols="60"></textarea>
+            <p> Word Count:
+                <span id="show">0</span>
+            </p>
+            <script>
+                function countWord() {
+                    var words = document.getElementById("word").value;
+         
+                    var count = 0;
+                    var limit = 100;
+                    var split = words.split(' ');
+         
+                    for (var i = 0; i < split.length; i++) {
+                        if (split[i] != "") {
+                            count += 1;
+                        }
+                    }
+                    //Catch if word count reaches 100
+                    if (count>=limit){
+                        document.getElementById("word").disabled = true;
+                        
+                    }
+                    document.getElementById("show").innerHTML = count;
+                }
+                function editWord() {
+                    document.getElementById("word").disabled = false;
+                }
+                
+            </script>
+            <button onclick="editWord()">Edit</button> 
+            <button onclick='location.href="../Finals/entries.html"'>submit</button> 
+        </div>
+
+        <div class="guide">
+            <h3>Guide</h3>
+            <p>This app allows you to write about the occurences on your day. It has a limit of 100 words per day to allow you to only select the memories that are important to you and you wanted to store.
+                The word count of your entry will be displayed on the bottom of the screen to help you count the words as you type. When it reaches 100, you won't be able to type anymore. use the edit button to edit the entry you've wrote.
+                Once you're done, click on the submit button to submit your entry of the day.
+            </p>
+        </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+body{
+    background-color: #ccffff;
+    
+}
+
+header{
+    background-color: #99ffff;
+    height: 100px;
+    width: 100%;
+
+}
+
+header img{
+    float:left;
+    width:300px;
+    height: 100px;
+    
+}
+
+.header-list li{
+    float: left;
+    padding: 33px 20px ;
+    list-style: none;
+    font-size: larger;
+    color: white;
+}
+
+.date{
+    font-size: larger;
+    margin:2%;
+    
+}
+
+.entry{
+    height: 30%;
+    margin: 1%;
+    padding: 2%;
+    border: cyan 5px solid;
+    background-color: aliceblue;
+}
+
+.guide{
+    margin: 1%;
+    padding: 1%;
+    border: cyan 5px solid;
+    background-color: aliceblue;
+}
